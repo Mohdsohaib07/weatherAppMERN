@@ -9,7 +9,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 let PORT  = process.env.PORT;
-
+app.get('/',(req,res)=>{
+    res.send('welcome to our weather backend');
+})
 app.post('/weather',async (req,res)=>{
     try {
         let lat='';

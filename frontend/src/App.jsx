@@ -16,7 +16,7 @@ async function getData(){
       const locationData ={latitudeData:position.coords.latitude,
                             longitudeData:position.coords.longitude
                            }
-       const response = await axios.post('http://localhost:8080/weather',{locationData});
+       const response = await axios.post('https://weather-app-mern-backend.vercel.app/weather',{locationData});
        console.log('response : ',response.data);
        
        setWeatherData( response.data);

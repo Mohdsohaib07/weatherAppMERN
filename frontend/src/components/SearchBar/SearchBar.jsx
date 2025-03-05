@@ -18,7 +18,7 @@ const SearchBar = ({weatherData,setWeatherData}) => {
       });
       return;
     }
-    const response = await axios.post('http://localhost:8080/weather',{cityName:inputData});
+    const response = await axios.post('https://weather-app-mern-backend.vercel.app/weather',{cityName:inputData});
     console.log(response.data);
      setWeatherData(response.data);
     
