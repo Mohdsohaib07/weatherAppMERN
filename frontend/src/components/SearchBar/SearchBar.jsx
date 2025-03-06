@@ -18,11 +18,20 @@ const SearchBar = ({weatherData,setWeatherData}) => {
       });
       return;
     }
-    const response = await axios.post('https://weather-app-mern-backend.vercel.app/weather',{cityName:inputData});
-    console.log(response.data);
-     setWeatherData(response.data);
-    
-    setInputData('');
+    try {
+      const response = await axios.post('https://weather-app-mern-backend.vercel.app/weather',{cityName:inputData});
+      console.log(response.data);
+       setWeatherData(response.data);
+      setInputData('');
+    } catch (error) {
+      enqueueSnackbar(error.message, {
+        autoHideDuration: 2000,
+        variant:"error",
+        anchorOrigin:{horizontal:"center",vertical:"top"}
+      }
+      );
+    }
+
   }
   useEffect(()=>{
     if(weatherData){

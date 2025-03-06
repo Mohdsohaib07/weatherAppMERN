@@ -67,7 +67,8 @@
     .third_section{
        text-align: center;
        justify-self:flex-end;
-       margin-top: 10px;
+       margin-top: 30px;
+       font-size: 14px;
     }
 
 }
